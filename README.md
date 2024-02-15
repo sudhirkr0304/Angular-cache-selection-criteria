@@ -1,4 +1,6 @@
-# MyApp
+# Angular cache selection criteria
+
+This project is build to showcase the selection criteria bases on different page.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.
 
