@@ -1,0 +1,31 @@
+.container {
+    margin: 30px;
+    
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+  }
+  
+  .example-header {
+    min-height: 64px;
+    padding: 8px 24px 8px;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    
+    padding: 5px;
+  }
+  
+  .mat-table {
+    overflow: auto;
+    max-height: 500px;
+  }
+  
+  .selected-row {
+    background-color: blue;
+    color: white; /* Change text color to white for better visibility */
+  }

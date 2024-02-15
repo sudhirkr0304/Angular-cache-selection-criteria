@@ -1,0 +1,52 @@
+<div style="margin: 30px;">
+    <button  type="button" class="btn btn-primary"  [routerLink]="['/second']">Next</button>
+    
+</div>
+
+<div class="example-header">
+    
+    
+    <mat-form-field appearance="standard">
+      <input matInput [(ngModel)]="filterValue" (keyup)="applyFilter()" placeholder="filter" #input >
+    </mat-form-field>
+  </div>
+  
+  <div class="example-container mat-elevation-z8">
+  
+    <table mat-table [dataSource]="dataSource"  matSort mat-selection>
+  
+      <!-- ID Column -->
+      <div style="background-color: red;">
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+        <mat-cell *matCellDef="let row" (click)="hello(row)"> {{row.id}} </mat-cell>
+      </ng-container>
+  
+      <!-- Progress Column -->
+      <ng-container matColumnDef="progress">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Progress </mat-header-cell>
+        <mat-cell *matCellDef="let row" (click)="hello(row)"> {{row.progress}}% </mat-cell>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+        <mat-cell *matCellDef="let row" (click)="hello(row)"> {{row.name}} </mat-cell>
+      </ng-container>
+  
+      <!-- Color Column -->
+      <ng-container matColumnDef="color">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Color </mat-header-cell>
+        <mat-cell *matCellDef="let row" (click)="hello(row)" [style.color]="row.color"> {{row.color}} </mat-cell>
+      </ng-container>
+
+    </div>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"   [class.selected-row]="isSelected(row)">
+      </mat-row>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+  </div>
+
